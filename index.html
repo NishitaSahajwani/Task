@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="steps">
+        <div class="">
+        <span class='baricon'>1</span>
+        <span id="bar1" class='progress_bar'></span>
+        <span class='baricon'>2</span>
+        <span id="bar2" class='progress_bar'></span>
+        <span class='baricon'>3</span>
+    </div>
+</div>
+    <div style="display: block;" id="first_popup">
+        <div class="main-div">
+            <div class="buttons-check" style="display: flex;">
+                <div class="sub_first">
+                    <h2>Select date of service</h2>
+                    <p style="color: grey;">Your services will take approx. 30 mins</p>
+                    <div style="padding:10px 0px ;">
+                        <button class="date_time"><span>Mon</span><br /><span class="text">30</span></button>
+                        <button class="date_time"><span>Tue</span><br /><span class="text">01</span></button>
+                        <button class="date_time"><span>Wed</span><br /><span class="text">04</span></button>
+                        <button class="date_time"><span>Thur</span><br /><span class="text">15</span></button>
+                    </div>
+                    <div style="display: flex;justify-content: space-between;">
+                        <button class="date_time"><span>Fri</span><br /><span class="text">16</span></button>
+                        <button class="date_time"><span>Sat</span><br /><span class="text">20</span></button>
+                        <button class="date_time"><span>Sun</span><br /><span class="text">25</span></button>
+                        <button class="date_time"><span style="font-size: 25px;">></span></button>
+                    </div>
+                </div>
+                <div class="sub_first">
+                    <h2>Time to start the service</h2>
+                    <p style="color: grey;">Select the best hour for you</p>
+                    <div style="padding:10px 0px ;">
+                        <button class="date_time"><span>Mon</span><br /><span class="text">30</span></button>
+                        <button class="date_time"><span>Tue</span><br /><span class="text">01</span></button>
+                        <button class="date_time"><span>Wed</span><br /><span class="text">04</span></button>
+                        <button class="date_time"><span>Thur</span><br /><span class="text">15</span></button>
+                    </div>
+                    <div style="display: flex;justify-content: space-between;">
+                        <button class="date_time"><span>Fri</span><br /><span class="text">16</span></button>
+                        <button class="date_time"><span>Sat</span><br /><span class="text">20</span></button>
+                        <button class="date_time"><span>Sun</span><br /><span class="text">25</span></button>
+                        <button class="date_time"><span style="font-size: 25px;">></span><br /><span class="text"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="button1">Cancel</button>
+            <button onclick="show_next_button('first_popup','second_popup','bar1')" class="button2">Continue</button>
+        </div>
+    </div>
+
+    <div style="display: none;" id="second_popup">
+        <div class="main-div">
+            <div class="buttons-check" style="display: flex;">
+                
+                <div class="sub_second">
+                    <h2>Personal Details</h2>
+                    <p style="color: grey;">Name and contact email</p>
+                    <div>
+                        <input placeholder="First Name" autocomplete="off"  onblur="check_fname();" class="input-field" type="text"
+                        id="fname"/>
+                        <br>
+                        <span class='error_text' id='fname_error'></span>
+                        <input placeholder="Last Name" autocomplete="off" class="input-field"
+                        onblur="check_lname();"
+                        type="text"
+                        id="lname"/>
+                        <br>
+                        <span class='error_text' id='lname_error'></span>
+                        <input placeholder="Work Email" autocomplete="off" class="input-field"
+                        onblur="check_email();"
+                        type="text"
+                        id="email"/>
+                        <br>
+                        <span class='error_text' id='email_error'></span>
+                    </div>
+                </div>
+                <div class="sub_second">
+                    <h2>Billing Address</h2>
+                    <p style="color: grey;">Address and location</p>
+                    <div>
+                        <input placeholder="Billing Address Line 1" autocomplete="off"  class="input-field"
+                        onblur="check_address();"
+                        type="text"
+                        id="address"/>
+                        <br>
+                        <span class='error_text' id='address_error'></span>
+                        <input placeholder="Billing Address Line 2" autocomplete="off"  class="input-field"
+                        onblur="check_address2()"
+                        type="text"
+                        id="address2"
+                        />
+                        <br>
+                        <span class='error_text' id='address2_error'></span>
+                        <div style="display: flex;">
+                        <input placeholder="Town" onblur="check_town()" autocomplete="off"  class="small-input"
+                        type="text"
+                        id="town"/>
+                        <br>
+                        <span class='error_text' id='town_error'></span>
+                        <input placeholder="Postcode" onblur="check_postcode()" class="small-input" autocomplete="off" 
+                        type="text"
+                        id="postcode"/>
+                        <br>
+                        <span class='error_text' id='postcode_error'></span>
+                        </div>
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="show_prev('first_popup','bar1')" class="button1">Back</button>
+            <button onclick="show_next('second_popup', 'third_popup','bar2')" class="button2">Continue</button>
+            <input type="radio" />Terms and Condition
+        </div>
+    </div>
+
+    <div style="display: none;" id="third_popup">
+        <div class="main-div">
+       <div class="buttons-check" style="display: flex;">
+         <div class="sub_third">
+            <h2>Basket Details</h2>
+            <p style="color: grey;">Name and contact email</p>
+            <div>
+                <p class="input-field">Credits: X 100<span>$100</span></p>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                <input placeholder="Discount Code" class="discount"
+                type="text"/>
+                <button class="apply-button">Apply</button>
+                </div>
+                <input placeholder="Work Email" class="input-field"
+                type="text"/>
+            </div>
+         </div>
+         <div class="sub_third">
+            <h2>Payment Options</h2>
+            <p style="color: grey;">Address and location</p>
+            <div>
+                <div class="input-radio" >
+                <input type="radio"/><span>Cash on delivery</span>
+            </div>
+            <div class="input-radio">
+                <input  type="radio"/><span>Credit Card (Stripe)</span>
+            </div>
+            <div class="input-radio">
+                <input  type="radio"/><span>Credit / Debit Cards</span>
+            </div>
+            </div>
+         </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="show_prev('second_popup','bar2')" class="button1">Back</button>
+        <button onclick="place_order()" class="button2">PLACE AN ORDER</button>
+    </div>
+    </div>
+
+</div>
+</body>
+
+</html>

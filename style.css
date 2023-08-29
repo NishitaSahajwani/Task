@@ -1,0 +1,148 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-div{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.sub_first{
+    padding: 30px;
+}
+.date_time{
+    background-color: aliceblue;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+button span{
+    font-size: medium;
+    color: darkblue;
+    font-weight:normal;
+}
+.text{
+    font-weight: bold;
+    font-size: 22px;
+}
+.text1{
+    font-weight: bold;
+    font-size: 20px;
+}
+.buttons{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   bottom: 30px;
+
+}
+.buttons button{
+    margin: 0px 10px;  
+    padding: 12px;
+    border-radius: 7px;
+    border: none;
+    font-size: 20px;
+    /* background: transparent; */
+    cursor: pointer;
+}
+.button1{
+     background-color: white;
+     border: 3px solid aliceblue;
+     color: blue;
+}
+.button2{
+    background-image: linear-gradient(to right, rgb(48, 114, 194) , rgb(72, 155, 238));
+    color: black;
+}
+.sub_second, .sub_third{
+    margin: 0px 50px;
+    width: 300px;
+}
+.input-field{
+    background-color: aliceblue;
+    border: none;
+    padding: 10px;
+    width: 280px;
+    border-radius: 7px;
+    font-size: medium;
+    margin: 7px 0px;
+}
+.small-input{
+    background-color: aliceblue;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: medium;
+    margin: 7px 7px 7px 0px;
+    width: 128px;
+}
+.apply-button{
+    background-color:rgb(16, 97, 219);
+    color: white;
+    padding:10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.discount{
+    width: 210px; 
+    background-color: aliceblue;
+    border: none;
+    padding: 12px;
+    border-radius: 7px;
+    margin: 7px 0px;
+    font-size: medium;
+}
+.error_text
+{
+ margin:0px;
+ color:#DF013A;	
+ font-weight:normal;
+ font-size:14px;
+}
+#wrapper .baricon
+{
+  display:inline-block;
+  border-radius:100%;
+  padding:12px;
+  background-color:rgb(16, 97, 219);
+  color:white;
+}
+#wrapper .progress_bar
+{
+  width:200px;
+  height:10px;
+  border-radius:20px;
+  background-color:#D8D8D8;
+  display:inline-block;
+}
+.input-radio{
+    display: flex;
+    align-items: center ;
+    /* justify-content: space-around; */
+    background-color: aliceblue;
+    border: none;
+    padding: 12px;
+    width: 280px;
+    border-radius: 7px;
+    font-size: medium;
+    margin: 10px 0px;
+}
+.steps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 60px;
+}
+
+@media (max-width: 819px) {
+    .buttons-check {
+      flex-direction: column;
+    }
+}
